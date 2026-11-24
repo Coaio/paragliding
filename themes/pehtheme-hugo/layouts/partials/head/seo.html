@@ -1,0 +1,70 @@
+{{- $title := site.Title -}}
+{{- if not .IsHome -}}
+  {{- $title = printf "%s - %s" site.Title .Title -}}
+{{- end -}}
+
+{{- $desc := site.Params.description -}}
+{{- if not .IsHome -}}
+  {{- with .Params.description -}}
+    {{- $desc = . -}}
+  {{- else -}}
+    {{- with .Description -}}
+      {{- $desc = . -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- $desc = $desc | plainify | replaceRE `\s+` " " | strings.TrimSpace -}}
+
+{{- $image := "images/logo.png" | absURL -}}
+{{- with .Params.image -}}
+  {{- if strings.HasPrefix . "http" -}}
+    {{- $image = . | absURL -}}
+  {{- else -}}
+    {{- with resources.Get . -}}
+      {{- $image = .Permalink -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $imageAlt := $title -}}
+
+{{- $keywords := site.Params.keywords -}}
+{{- if not .IsHome -}}
+  {{- $extra := slice .Title -}}
+  {{- range .Params.tags -}}
+    {{- $extra = $extra | append . -}}
+  {{- end -}}
+  {{- $keywords = printf "%s, %s" $keywords (delimit $extra ", ") -}}
+{{- end -}}
+{{- with .Params.keywords -}}
+  {{- $keywords = . -}}
+{{- end -}}
+
+{{- $robots := "index, follow" -}}
+{{- if or (eq .Kind "term") (eq .Kind "taxonomy") (and (eq .Kind "section") (eq .Section "posts")) -}}
+  {{- $robots = "noindex, follow" -}}
+{{- end -}}
+
+<title>{{ $title }}</title>
+<meta name="description" content="{{ $desc }}">
+<meta name="keywords" content="{{ $keywords }}">
+<meta name="robots" content="{{ $robots }}">
+<meta name="author" content="{{ site.Title }}">
+<link rel="canonical" href="{{ .Permalink }}">
+<meta itemprop="description" content="{{ $desc }}">
+<meta itemprop="image" content="{{ $image }}">
+<meta itemprop="imageUrl" content="{{ $image }}">
+<meta itemprop="thumbnailUrl" content="{{ $image }}">
+<meta property="og:site_name" content="{{ site.Title }}">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ .Permalink }}">
+<meta property="og:title" content="{{ $title }}">
+<meta property="og:description" content="{{ $desc }}">
+<meta property="og:image" content="{{ $image }}">
+<meta property="og:image:alt" content="{{ $imageAlt }}">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="{{ $title }}">
+<meta name="twitter:description" content="{{ $desc }}">
+<meta name="twitter:image" content="{{ $image }}">
+<meta name="twitter:image:alt" content="{{ $imageAlt }}">

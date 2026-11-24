@@ -2,19 +2,19 @@
 	
 	<a class="insert-link" href="{{ .Permalink }}"></a>
 
-	<figure class="w-full aspect-video overflow-hidden rounded-3xl">
+	<figure class="relative w-full aspect-square overflow-hidden rounded-3xl bg-white">
 
 		{{- if .Params.image }}
 
 		  {{- if (strings.HasPrefix .Params.image "http") }}
 
-			<img class="object-cover group-hover:scale-105 transition duration-500 cursor-pointer" src="{{ .Params.image }}" alt="{{ $.Name }}" style="width: 100%; height: 100%; object-fit: cover;">
+			<img class="group-hover:scale-105 transition duration-500 cursor-pointer" src="{{ .Params.image }}" alt="{{ $.Name }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain;">
 
 		  {{- else }}
 
 			{{- with $imgcard := resources.Get .Params.image -}}
-			  {{- $imgcard := $imgcard.Process "resize 750x" -}}
-			  <img class="object-cover group-hover:scale-105 transition duration-500 cursor-pointer" src="{{ $imgcard.Permalink }}" alt="{{ $.Name }}" width="{{ $imgcard.Width }}" height="{{ $imgcard.Height }}">
+			  {{- $imgcard := $imgcard.Fit "750x750 q85" -}}
+			  <img class="group-hover:scale-105 transition duration-500 cursor-pointer" src="{{ $imgcard.Permalink }}" alt="{{ $.Name }}" width="{{ $imgcard.Width }}" height="{{ $imgcard.Height }}" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain;">
 			{{- end }}
 
 		  {{- end }}

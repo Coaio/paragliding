@@ -6,11 +6,15 @@
 
   <section class="md:col-span-2">
 
-    <h2 class="text-3xl font-bold mb-10">{{ .Title | humanize }}</h2>
+    <h2 class="text-3xl font-bold {{ if .Description }}mb-4{{ else }}mb-10{{ end }}">{{ .Title | humanize }}</h2>
+
+    {{ with .Description }}
+    <p class="mb-10 text-zinc-500">{{ . }}</p>
+    {{ end }}
 
     <div class="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-4">
 
-      {{ range ( .Paginator 6 ).Pages }}
+      {{ range .Paginator.Pages }}
       
         {{- partial "content/card.html" . -}}
 

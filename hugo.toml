@@ -9,7 +9,8 @@ disqusShortname = ''
 
 [params]
 	description = 'Curated directory of the best paragliding apps, maps, instruments, weather tools, and tutorials for free-flight pilots.'
-	mainSections = 'posts'
+	keywords = 'paragliding, hang gliding, free flight, paragliding apps, flight instruments, weather, launch sites, cross country, tutorials'
+	mainSections = 'applications'
 
 [author]
 	name = 'Paragliding App'
@@ -27,11 +28,11 @@ disqusShortname = ''
 		weight = 10
 	[[menu.main]]
 		name = 'Applications'
-		pageRef = '/tags/applications/'
+		pageRef = '/applications/'
 		weight = 15
 	[[menu.main]]
 		name = 'Tutorials'
-		pageRef = '/posts/tutorials/'
+		pageRef = '/tutorials/'
 		weight = 20
 	[[menu.main]]
 		name = 'Contact us'

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="{{ site.Language.Lang }}">
+<head>
+  <meta charset="utf-8">
+  <link rel="canonical" href="{{ .Params.target | relURL }}">
+  <meta name="robots" content="noindex">
+  <meta http-equiv="refresh" content="0; url={{ .Params.target | relURL }}">
+  <title>{{ .Title }}</title>
+</head>
+<body>
+  <p><a href="{{ .Params.target | relURL }}">{{ .Title }}</a></p>
+</body>
+</html>
