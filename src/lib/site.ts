@@ -1,12 +1,12 @@
 export const SITE = {
   title: 'Paragliding App',
   description:
-    'Curated directory of the best paragliding apps, maps, instruments, weather tools, and tutorials for free-flight pilots.',
+    'Curated directory of paragliding apps, websites, maps, instruments, weather tools, and tutorials for free-flight pilots.',
   keywords:
     'paragliding, hang gliding, free flight, paragliding apps, flight instruments, weather, launch sites, cross country, tutorials',
   author: 'Paragliding App',
   url: 'https://paragliding.app',
-  footerBlurb: 'A directory of paragliding applications and tutorials.',
+  footerBlurb: 'A directory of paragliding applications, websites, and tutorials.',
 } as const;
 
 export const MENU = [
@@ -20,7 +20,7 @@ export const SECTIONS = {
   applications: {
     title: 'Applications',
     description:
-      'Android, iOS, and web apps for paragliding instruments, site maps, weather, and contests.',
+      'Android, iOS, and web tools for instruments, maps, weather, contests, and the sites pilots keep open.',
   },
   tutorials: {
     title: 'Tutorials',
