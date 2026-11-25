@@ -3,6 +3,7 @@ title: "DHV-XC"
 date: 2026-11-25
 weight: 10
 tags: ["applications", "web", "contests"]
+category: "contests"
 description: "DHV-XC is the German online contest and logbook where pilots upload IGC tracks and compare flights."
 summary: "DHV-XC is the German online contest and logbook where pilots upload IGC tracks and compare flights."
 image: "images/dhv-xc.png"

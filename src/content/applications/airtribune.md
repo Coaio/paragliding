@@ -3,6 +3,7 @@ title: "Airtribune"
 date: 2026-11-25
 weight: 10
 tags: ["applications", "web", "contests"]
+category: "contests"
 description: "Airtribune hosts competition websites, live tracking, and results for hang gliding and paragliding events."
 summary: "Airtribune hosts competition websites, live tracking, and results for hang gliding and paragliding events."
 image: "images/airtribune.png"

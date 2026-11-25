@@ -3,6 +3,7 @@ title: "XCSoar"
 date: 2026-11-25
 weight: 10
 tags: ["applications", "android", "ios"]
+category: "instruments"
 description: "XCSoar is the free open-source glide computer for maps, airspace, tasks, and traffic."
 summary: "XCSoar is the free open-source glide computer for maps, airspace, tasks, and traffic."
 image: "images/xcsoar.png"

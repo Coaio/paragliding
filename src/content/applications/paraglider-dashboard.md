@@ -3,6 +3,7 @@ title: "Paraglider Dashboard"
 date: 2026-11-24
 aliases: ["/posts/paraglider-dashboard/"]
 tags: ["applications", "android"]
+category: "instruments"
 description: "Paraglider Dashboard is an Android flight display that computes the wind while you fly, including on a paramotor."
 summary: "Paraglider Dashboard is an Android flight display that computes the wind while you fly, including on a paramotor."
 image: "images/dashboard.png"

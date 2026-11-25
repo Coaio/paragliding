@@ -3,6 +3,7 @@ title: "CIVL Comps"
 date: 2026-11-25
 weight: 10
 tags: ["applications", "web", "contests"]
+category: "contests"
 description: "CIVL Comps is the FAI calendar of hang gliding and paragliding events, and the world pilot ranking."
 summary: "CIVL Comps is the FAI calendar of hang gliding and paragliding events, and the world pilot ranking."
 image: "images/civl-comps.png"

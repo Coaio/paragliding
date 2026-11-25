@@ -3,6 +3,7 @@ title: "Paragliding Forum"
 date: 2026-11-25
 weight: 10
 tags: ["applications", "web"]
+category: "reference"
 description: "Paragliding Forum is the long-running English-language board where pilots compare gear, sites, and incidents."
 summary: "Paragliding Forum is the long-running English-language board where pilots compare gear, sites, and incidents."
 image: "images/paragliding-forum.png"

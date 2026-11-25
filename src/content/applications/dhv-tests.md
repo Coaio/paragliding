@@ -3,6 +3,7 @@ title: "DHV equipment tests"
 date: 2026-11-25
 weight: 10
 tags: ["applications", "web"]
+category: "reference"
 description: "The DHV publishes type-test reports for paragliders, hang gliders, reserves, and harnesses."
 summary: "The DHV publishes type-test reports for paragliders, hang gliders, reserves, and harnesses."
 image: "images/dhv-tests.png"

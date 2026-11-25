@@ -3,6 +3,7 @@ title: "Flyskyhy"
 date: 2026-11-25
 weight: 10
 tags: ["applications", "ios"]
+category: "instruments"
 description: "Flyskyhy is the iPhone flight computer paraglider and hang glider pilots use for maps, wind, and tasks."
 summary: "Flyskyhy is the iPhone flight computer paraglider and hang glider pilots use for maps, wind, and tasks."
 image: "images/flyskyhy.png"

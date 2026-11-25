@@ -3,6 +3,7 @@ title: "XContest"
 date: 2026-11-24
 aliases: ["/posts/xcontest/"]
 tags: ["applications", "web", "contests"]
+category: "contests"
 description: "XContest is the online cross-country contest where paraglider and hang glider pilots upload IGC tracks."
 summary: "XContest is the online cross-country contest where paraglider and hang glider pilots upload IGC tracks."
 image: "images/xcontest.png"

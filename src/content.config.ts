@@ -1,6 +1,7 @@
 import { defineCollection } from 'astro:content';
 import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
+import { APP_CATEGORY_IDS } from './lib/site';
 
 const entrySchema = z.object({
   title: z.string(),
@@ -15,7 +16,9 @@ const entrySchema = z.object({
 
 const applications = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/applications' }),
-  schema: entrySchema,
+  schema: entrySchema.extend({
+    category: z.enum(APP_CATEGORY_IDS),
+  }),
 });
 
 const tutorials = defineCollection({

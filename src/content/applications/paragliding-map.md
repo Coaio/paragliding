@@ -3,6 +3,7 @@ title: "Paragliding Map"
 date: 2026-11-24
 aliases: ["/posts/paragliding-map/"]
 tags: ["applications", "android", "feature"]
+category: "weather"
 description: "Paragliding Map shows launch sites, forecasts, webcams, and airspace so you can see where it is flyable."
 summary: "Paragliding Map shows launch sites, forecasts, webcams, and airspace so you can see where it is flyable."
 image: "images/paragliding-map.png"

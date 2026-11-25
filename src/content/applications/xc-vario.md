@@ -3,6 +3,7 @@ title: "XC Vario"
 date: 2026-11-25
 weight: 10
 tags: ["applications", "android"]
+category: "instruments"
 description: "XC Vario turns an Android phone's motion sensors and barometer into a paragliding vario."
 summary: "XC Vario turns an Android phone's motion sensors and barometer into a paragliding vario."
 image: "images/xc-vario.png"

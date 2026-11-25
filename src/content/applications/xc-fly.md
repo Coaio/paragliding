@@ -3,6 +3,7 @@ title: "XC Fly"
 date: 2026-11-25
 weight: 10
 tags: ["applications", "android", "ios"]
+category: "instruments"
 description: "XC Fly is a phone vario and logbook for paragliding and paramotor, with airspace that works offline."
 summary: "XC Fly is a phone vario and logbook for paragliding and paramotor, with airspace that works offline."
 image: "images/xc-fly.png"

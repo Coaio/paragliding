@@ -3,6 +3,7 @@ title: "Meteo-Parapente"
 date: 2026-11-25
 weight: 10
 tags: ["applications", "web", "weather"]
+category: "weather"
 description: "Meteo-Parapente is a free-flight forecast with thermal maps and soundings from its own model."
 summary: "Meteo-Parapente is a free-flight forecast with thermal maps and soundings from its own model."
 image: "images/meteo-parapente.png"

@@ -3,6 +3,7 @@ title: "pgPilot"
 date: 2026-11-25
 weight: 10
 tags: ["applications", "android", "ios"]
+category: "instruments"
 description: "pgPilot is a phone flight instrument with a vario, an offline map, airspace, and a radio companion."
 summary: "pgPilot is a phone flight instrument with a vario, an offline map, airspace, and a radio companion."
 image: "images/pgpilot.png"

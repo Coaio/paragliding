@@ -3,6 +3,7 @@ title: "Paragliding Earth"
 date: 2026-11-25
 weight: 10
 tags: ["applications", "web"]
+category: "weather"
 description: "Paragliding Earth is the worldwide directory of launch sites that other maps still pull from."
 summary: "Paragliding Earth is the worldwide directory of launch sites that other maps still pull from."
 image: "images/paragliding-earth.png"

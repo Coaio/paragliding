@@ -1,28 +1,40 @@
 ---
 import Base from '../layouts/Base.astro';
-import Card from '../components/Card.astro';
-import { loadEntries } from '../lib/content';
+import HomeGroup from '../components/HomeGroup.astro';
+import { groupApplications, loadEntries } from '../lib/content';
 import { SECTIONS } from '../lib/site';
 
 const { applications, tutorials } = await loadEntries();
+const groups = groupApplications(applications);
 ---
 
 <Base>
-  <section class="mt-14 mb-16">
-    <div class="flex items-center mb-6">
-      <h2 class="text-3xl md:text-4xl font-bold mr-auto">Applications</h2>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-10">
-      {applications.map((entry) => <Card entry={entry} />)}
-    </div>
+  <section class="home-intro">
+    <nav class="home-jump" aria-label="Categories">
+      {
+        groups.map((group) => (
+          <a href={`#${group.id}`}>{group.title}</a>
+        ))
+      }
+      <a href="#tutorials">{SECTIONS.tutorials.title}</a>
+    </nav>
   </section>
-  <section class="mb-16">
-    <div class="flex items-center mb-6">
-      <h2 class="text-3xl md:text-4xl font-bold mr-auto">{SECTIONS.tutorials.title}</h2>
-    </div>
-    <p class="text-zinc-500 mb-6">{SECTIONS.tutorials.description}</p>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-10">
-      {tutorials.map((entry) => <Card entry={entry} />)}
-    </div>
-  </section>
+  {
+    groups.map((group) => (
+      <HomeGroup
+        id={group.id}
+        title={group.title}
+        description={group.description}
+        entries={group.entries}
+        noun="tool"
+      />
+    ))
+  }
+  <HomeGroup
+    id="tutorials"
+    title={SECTIONS.tutorials.title}
+    description={SECTIONS.tutorials.description}
+    entries={tutorials}
+    noun="film"
+  />
 </Base>

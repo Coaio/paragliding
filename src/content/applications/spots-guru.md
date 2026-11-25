@@ -3,6 +3,7 @@ title: "Spots Guru"
 date: 2026-11-24
 aliases: ["/posts/spots-guru/"]
 tags: ["applications", "web", "weather"]
+category: "weather"
 description: "Spots Guru ranks nearby flying sites against the forecast and tells you where and when to go."
 summary: "Spots Guru ranks nearby flying sites against the forecast and tells you where and when to go."
 image: "images/spots-guru.png"

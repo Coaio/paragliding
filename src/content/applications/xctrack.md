@@ -3,6 +3,7 @@ title: "XCTrack"
 date: 2026-11-24
 aliases: ["/posts/xctrack/"]
 tags: ["applications", "android", "feature"]
+category: "instruments"
 description: "XCTrack is the XContest team's Android flight computer for free flying and competitions."
 summary: "XCTrack is the XContest team's Android flight computer for free flying and competitions."
 image: "images/xctrack.png"

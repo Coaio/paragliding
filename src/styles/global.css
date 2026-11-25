@@ -106,7 +106,80 @@
   }
 }
 
+.home-intro {
+  margin-top: 3.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.home-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.home-jump a {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 0.9rem;
+  border: 1px solid #e4e4e7;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  line-height: 1.2;
+  color: #18181b;
+  text-decoration: none;
+}
+
+.home-jump a:hover {
+  background: #f4f4f5;
+}
+
+.home-group {
+  scroll-margin-top: 1.5rem;
+  margin-top: 2.75rem;
+  margin-bottom: 3.5rem;
+  padding-top: 2.25rem;
+  border-top: 1px solid #e4e4e7;
+}
+
+.home-group-head {
+  margin-bottom: 1.75rem;
+}
+
+.home-group-title {
+  display: flex;
+  align-items: baseline;
+  gap: 0.85rem;
+}
+
+.home-group h2 {
+  font-family: Fraunces, Georgia, "Times New Roman", serif;
+  font-weight: 560;
+  font-size: 2rem;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+}
+
+.home-count {
+  flex: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #a1a1aa;
+}
+
+.home-group-text {
+  max-width: 40rem;
+  margin-top: 0.7rem;
+  color: #52525b;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
 @media (min-width: 768px) {
+  .home-group h2 {
+    font-size: 2.35rem;
+  }
+
   .site-header {
     padding-top: 1.7rem;
     padding-bottom: 1.7rem;

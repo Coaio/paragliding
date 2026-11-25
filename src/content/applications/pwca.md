@@ -3,6 +3,7 @@ title: "PWCA"
 date: 2026-11-25
 weight: 10
 tags: ["applications", "web", "contests"]
+category: "contests"
 description: "The Paragliding World Cup Association runs the World Cup series and publishes its results."
 summary: "The Paragliding World Cup Association runs the World Cup series and publishes its results."
 image: "images/pwca.png"

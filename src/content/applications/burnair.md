@@ -3,6 +3,7 @@ title: "Burnair"
 date: 2026-11-25
 weight: 10
 tags: ["applications", "web", "weather"]
+category: "weather"
 description: "Burnair is a flying map for the Alps: wind, thermals, launch pages, airspace, and NOTAMs."
 summary: "Burnair is a flying map for the Alps: wind, thermals, launch pages, airspace, and NOTAMs."
 image: "images/burnair.png"

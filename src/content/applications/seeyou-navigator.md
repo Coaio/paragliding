@@ -3,6 +3,7 @@ title: "SeeYou Navigator"
 date: 2026-11-25
 weight: 10
 tags: ["applications", "android", "ios"]
+category: "instruments"
 description: "SeeYou Navigator is Naviter's phone app for maps, airspace, tasks, and a glide to a landing field."
 summary: "SeeYou Navigator is Naviter's phone app for maps, airspace, tasks, and a glide to a landing field."
 image: "images/seeyou-navigator.png"

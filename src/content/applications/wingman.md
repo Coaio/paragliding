@@ -3,6 +3,7 @@ title: "Wingman"
 date: 2026-11-25
 weight: 10
 tags: ["applications", "ios"]
+category: "instruments"
 description: "Wingman is an iPhone and Apple Watch vario with airspace warnings and a 3D replay of the flight."
 summary: "Wingman is an iPhone and Apple Watch vario with airspace warnings and a 3D replay of the flight."
 image: "images/wingman.png"

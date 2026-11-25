@@ -3,6 +3,7 @@ title: "SkySight"
 date: 2026-11-25
 weight: 10
 tags: ["applications", "web", "weather"]
+category: "weather"
 description: "SkySight is the route forecast paraglider and glider pilots use to see the day along a line."
 summary: "SkySight is the route forecast paraglider and glider pilots use to see the day along a line."
 image: "images/skysight.png"

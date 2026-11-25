@@ -3,6 +3,7 @@ title: "Ayvri"
 date: 2026-11-25
 weight: 10
 tags: ["applications", "web"]
+category: "contests"
 description: "Ayvri replays an IGC track in 3D over the terrain, so you can watch the line you actually flew."
 summary: "Ayvri replays an IGC track in 3D over the terrain, so you can watch the line you actually flew."
 image: "images/ayvri.png"

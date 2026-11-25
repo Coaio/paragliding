@@ -29,6 +29,40 @@ export const SECTIONS = {
   },
 } as const;
 
+export const APP_CATEGORY_IDS = ['weather', 'instruments', 'contests', 'reference'] as const;
+
+export type AppCategoryId = (typeof APP_CATEGORY_IDS)[number];
+
+export const APP_CATEGORIES: readonly {
+  id: AppCategoryId;
+  title: string;
+  description: string;
+}[] = [
+  {
+    id: 'weather',
+    title: 'Weather and sites',
+    description:
+      'Forecasts, live wind, webcams, and launch maps. Use these to decide if you go, and which hill is worth the drive.',
+  },
+  {
+    id: 'instruments',
+    title: 'Flight instruments',
+    description: 'Varios, moving maps, airspace, and tasks. These are the apps that stay on in the air.',
+  },
+  {
+    id: 'contests',
+    title: 'Contests and tracks',
+    description:
+      'Upload a flight, follow a competition, or watch the line you flew. Live tracking and club challenges sit here too.',
+  },
+  {
+    id: 'reference',
+    title: 'Reference',
+    description:
+      'Wing tests, the airspace database other apps load, the magazine, and the place pilots compare notes.',
+  },
+];
+
 export const PAGE_SIZE = 9;
 
 export const CONTACT = {
@@ -66,15 +100,6 @@ export function longDate(date: Date) {
   return new Intl.DateTimeFormat('en-US', {
     month: 'long',
     day: 'numeric',
-    year: 'numeric',
-    timeZone: 'UTC',
-  }).format(date);
-}
-
-export function cardDate(date: Date) {
-  return new Intl.DateTimeFormat('en-US', {
-    month: 'short',
-    day: '2-digit',
     year: 'numeric',
     timeZone: 'UTC',
   }).format(date);

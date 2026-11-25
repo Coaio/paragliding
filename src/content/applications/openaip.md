@@ -3,6 +3,7 @@ title: "OpenAIP"
 date: 2026-11-25
 weight: 10
 tags: ["applications", "web"]
+category: "reference"
 description: "OpenAIP is the open airspace database that XCTrack, XCSoar, and other flight apps load."
 summary: "OpenAIP is the open airspace database that XCTrack, XCSoar, and other flight apps load."
 image: "images/openaip.png"

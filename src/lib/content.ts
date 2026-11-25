@@ -1,5 +1,5 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
-import { PAGE_SIZE, SECTIONS, humanize, withBase } from './site';
+import { APP_CATEGORIES, PAGE_SIZE, SECTIONS, humanize, withBase } from './site';
 
 export type Application = CollectionEntry<'applications'>;
 export type Tutorial = CollectionEntry<'tutorials'>;
@@ -29,6 +29,13 @@ export async function loadTutorials() {
 export async function loadEntries() {
   const [applications, tutorials] = await Promise.all([loadApplications(), loadTutorials()]);
   return { applications, tutorials, all: [...applications, ...tutorials] };
+}
+
+export function groupApplications(applications: Application[]) {
+  return APP_CATEGORIES.map((category) => ({
+    ...category,
+    entries: applications.filter((entry) => entry.data.category === category.id),
+  })).filter((group) => group.entries.length > 0);
 }
 
 export function relatedEntries(entry: Entry, all: Entry[], count = 2) {

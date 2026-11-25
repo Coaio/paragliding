@@ -3,6 +3,7 @@ title: "Holfuy"
 date: 2026-11-25
 weight: 10
 tags: ["applications", "web", "weather"]
+category: "weather"
 description: "Holfuy shows live wind from stations and webcams on launches, updated through the day."
 summary: "Holfuy shows live wind from stations and webcams on launches, updated through the day."
 image: "images/holfuy.png"

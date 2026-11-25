@@ -1,7 +1,7 @@
 ---
 import type { Entry } from '../lib/content';
 import { entryHref } from '../lib/content';
-import { cardDate, imageSrc, machineDate } from '../lib/site';
+import { imageSrc } from '../lib/site';
 
 interface Props {
   entry: Entry;
@@ -23,8 +23,7 @@ const src = imageSrc(entry.data.image);
     />
   </figure>
   <div class="p-6">
-    <time datetime={machineDate(entry.data.date)}>{cardDate(entry.data.date)}</time>
-    <h3 class="my-4 text-2xl font-bold">{entry.data.title}</h3>
+    <h3 class="mb-4 text-2xl font-bold">{entry.data.title}</h3>
     <p class="text-normal leading-normal text-zinc-500 line-clamp-2">{entry.data.description}</p>
   </div>
 </article>

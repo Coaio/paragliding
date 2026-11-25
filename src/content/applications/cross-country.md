@@ -3,6 +3,7 @@ title: "Cross Country"
 date: 2026-11-25
 weight: 10
 tags: ["applications", "web"]
+category: "reference"
 description: "Cross Country is the free-flight magazine for gear tests, competition reports, and technique."
 summary: "Cross Country is the free-flight magazine for gear tests, competition reports, and technique."
 image: "images/cross-country.png"

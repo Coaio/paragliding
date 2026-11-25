@@ -1,0 +1,28 @@
+---
+import Card from './Card.astro';
+import type { Entry } from '../lib/content';
+
+interface Props {
+  id: string;
+  title: string;
+  description: string;
+  entries: Entry[];
+  noun: string;
+}
+
+const { id, title, description, entries, noun } = Astro.props;
+const countLabel = `${entries.length} ${entries.length === 1 ? noun : `${noun}s`}`;
+---
+
+<section class="home-group" id={id} aria-labelledby={`${id}-title`}>
+  <header class="home-group-head">
+    <div class="home-group-title">
+      <h2 id={`${id}-title`}>{title}</h2>
+      <p class="home-count">{countLabel}</p>
+    </div>
+    <p class="home-group-text">{description}</p>
+  </header>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-10">
+    {entries.map((entry) => <Card entry={entry} />)}
+  </div>
+</section>

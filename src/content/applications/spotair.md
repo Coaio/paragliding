@@ -3,6 +3,7 @@ title: "SpotAiR"
 date: 2026-11-25
 weight: 10
 tags: ["applications", "web", "weather"]
+category: "weather"
 description: "SpotAiR gathers live wind, webcams, flying sites, and airspace on one map, with offline downloads."
 summary: "SpotAiR gathers live wind, webcams, flying sites, and airspace on one map, with offline downloads."
 image: "images/spotair.png"

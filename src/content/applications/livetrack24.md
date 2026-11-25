@@ -3,6 +3,7 @@ title: "LiveTrack24"
 date: 2026-11-25
 weight: 10
 tags: ["applications", "web"]
+category: "contests"
 description: "LiveTrack24 is the live-tracking map that varios and phone apps send a position to during a flight."
 summary: "LiveTrack24 is the live-tracking map that varios and phone apps send a position to during a flight."
 image: "images/livetrack24.png"

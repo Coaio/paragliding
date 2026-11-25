@@ -3,6 +3,7 @@ title: "SIDEKIK"
 date: 2026-11-24
 aliases: ["/posts/sidekik/"]
 tags: ["applications", "android", "ios"]
+category: "contests"
 description: "Sidekik is a free iOS and Android app for tracking flights, collecting summits, and flying with your club."
 summary: "Sidekik is a free iOS and Android app for tracking flights, collecting summits, and flying with your club."
 image: "images/sidekik.png"

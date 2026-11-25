@@ -3,6 +3,7 @@ title: "Windy"
 date: 2026-11-24
 aliases: ["/posts/windy/", "/applications/windy/"]
 tags: ["applications", "web", "weather"]
+category: "weather"
 description: "Windy is the animated forecast map pilots use to compare wind, cloud, and rain before a flight."
 summary: "Windy is the animated forecast map pilots use to compare wind, cloud, and rain before a flight."
 image: "images/windy.png"
