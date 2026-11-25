@@ -1,0 +1,21 @@
+---
+import { pageHref } from '../lib/content';
+
+interface Props {
+  base: string;
+  page: number;
+  hasPrev: boolean;
+  hasNext: boolean;
+}
+
+const { base, page, hasPrev, hasNext } = Astro.props;
+---
+
+<div class="flex items-center mt-10">
+  {hasPrev && (
+    <a class="border rounded-full px-6 py-2 hover:bg-zinc-200 mr-auto" href={pageHref(base, page - 1)}>← Previous</a>
+  )}
+  {hasNext && (
+    <a class="border rounded-full px-6 py-2 hover:bg-zinc-200" href={pageHref(base, page + 1)}>Next →</a>
+  )}
+</div>

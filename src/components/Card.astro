@@ -1,0 +1,30 @@
+---
+import type { Entry } from '../lib/content';
+import { entryHref } from '../lib/content';
+import { cardDate, imageSrc, machineDate } from '../lib/site';
+
+interface Props {
+  entry: Entry;
+}
+
+const { entry } = Astro.props;
+const href = entryHref(entry);
+const src = imageSrc(entry.data.image);
+---
+
+<article class="relative group bg-zinc-100 hover:bg-blue-100 rounded-3xl">
+  <a class="insert-link" href={href}><span class="sr-only">{entry.data.title}</span></a>
+  <figure class="relative w-full aspect-square overflow-hidden rounded-3xl bg-white">
+    <img
+      class="group-hover:scale-105 transition duration-500 cursor-pointer"
+      src={src}
+      alt={entry.data.title}
+      style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain;"
+    />
+  </figure>
+  <div class="p-6">
+    <time datetime={machineDate(entry.data.date)}>{cardDate(entry.data.date)}</time>
+    <h3 class="my-4 text-2xl font-bold">{entry.data.title}</h3>
+    <p class="text-normal leading-normal text-zinc-500 line-clamp-2">{entry.data.description}</p>
+  </div>
+</article>

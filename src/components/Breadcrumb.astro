@@ -1,0 +1,24 @@
+---
+import { withBase } from '../lib/site';
+
+interface Crumb {
+  href: string;
+  label: string;
+}
+
+interface Props {
+  items: Crumb[];
+}
+
+const { items } = Astro.props;
+---
+
+<div id="breadcrumb" class="max-w-7xl mx-auto py-8">
+  <ul class="flex space-x-4 text-sm text-zinc-500">
+    {items.map((item) => (
+      <li class="after:content-['❯'] after:ml-4 after:opacity-30 last:after:content-none uppercase">
+        <a href={withBase(item.href)}>{item.label}</a>
+      </li>
+    ))}
+  </ul>
+</div>

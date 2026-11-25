@@ -1,0 +1,26 @@
+---
+import type { Entry } from '../lib/content';
+import { entryHref } from '../lib/content';
+import { imageSrc } from '../lib/site';
+
+interface Props {
+  entry: Entry;
+}
+
+const { entry } = Astro.props;
+---
+
+<article class="relative group flex flex-row">
+  <a class="insert-link" href={entryHref(entry)}><span class="sr-only">{entry.data.title}</span></a>
+  <figure class="relative basis-1/3 aspect-square overflow-hidden rounded-2xl bg-white">
+    <img
+      class="group-hover:scale-105 transition duration-500 cursor-pointer"
+      src={imageSrc(entry.data.image)}
+      alt={entry.data.title}
+      style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain;"
+    />
+  </figure>
+  <div class="basis-2/3 self-center ml-4">
+    <h3 class="font-bold group-hover:underline decoration-auto">{entry.data.title}</h3>
+  </div>
+</article>

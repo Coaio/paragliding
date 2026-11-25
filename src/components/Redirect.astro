@@ -1,0 +1,25 @@
+---
+import { withBase } from '../lib/site';
+
+interface Props {
+  target: string;
+}
+
+const { target } = Astro.props;
+const origin = Astro.site?.origin ?? Astro.url.origin;
+const absolute = new URL(withBase(target), origin).href;
+---
+
+<!doctype html>
+<html lang="en-us">
+  <head>
+    <title>{absolute}</title>
+    <link rel="canonical" href={absolute} />
+    <meta name="robots" content="noindex" />
+    <meta charset="utf-8" />
+    <meta http-equiv="refresh" content={`0; url=${absolute}`} />
+  </head>
+  <body>
+    <p><a href={absolute}>{absolute}</a></p>
+  </body>
+</html>

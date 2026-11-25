@@ -1,0 +1,26 @@
+---
+import ListLayout from '../../../components/ListLayout.astro';
+import { paginate, sectionPages } from '../../../lib/content';
+import { loadApplications } from '../../../lib/content';
+import { SECTIONS, SITE } from '../../../lib/site';
+
+export async function getStaticPaths() {
+  const entries = await loadApplications();
+  return sectionPages(entries.length).map(({ page }) => ({ params: { page } }));
+}
+
+const page = Number(Astro.params.page);
+const section = SECTIONS.applications;
+const result = paginate(await loadApplications(), page);
+---
+
+<ListLayout
+  title={section.title}
+  description={section.description}
+  entries={result.items}
+  page={result.page}
+  hasPrev={result.hasPrev}
+  hasNext={result.hasNext}
+  base="/applications/"
+  crumbs={[{ href: '/', label: SITE.title }]}
+/>

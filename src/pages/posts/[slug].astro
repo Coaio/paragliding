@@ -1,0 +1,28 @@
+---
+import { getCollection } from 'astro:content';
+import Redirect from '../../components/Redirect.astro';
+import { entryHref, type Entry } from '../../lib/content';
+
+export async function getStaticPaths() {
+  const [applications, tutorials] = await Promise.all([
+    getCollection('applications'),
+    getCollection('tutorials'),
+  ]);
+  const paths: { params: { slug: string }; props: { target: string } }[] = [];
+  for (const entry of [...applications, ...tutorials] as Entry[]) {
+    for (const alias of entry.data.aliases) {
+      const path = alias.replace(/^\/|\/$/g, '');
+      if (!path.startsWith('posts/')) continue;
+      const slug = path.slice('posts/'.length);
+      if (!slug || slug.includes('/')) continue;
+      paths.push({ params: { slug }, props: { target: entryHref(entry) } });
+    }
+  }
+  paths.push({ params: { slug: 'tutorials' }, props: { target: '/tutorials/' } });
+  return paths;
+}
+
+const { target } = Astro.props;
+---
+
+<Redirect target={target} />

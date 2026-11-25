@@ -1,0 +1,26 @@
+---
+import ListLayout from '../../components/ListLayout.astro';
+import { paginate, tagGroups } from '../../lib/content';
+import { SITE } from '../../lib/site';
+
+export async function getStaticPaths() {
+  const tags = await tagGroups();
+  return tags.map((tag) => ({ params: { tag: tag.slug }, props: { title: tag.title } }));
+}
+
+const slug = Astro.params.tag ?? '';
+const title = Astro.props.title;
+const group = (await tagGroups()).find((tag) => tag.slug === slug);
+const result = paginate(group?.entries ?? [], 1);
+---
+
+<ListLayout
+  title={title}
+  entries={result.items}
+  page={result.page}
+  hasPrev={result.hasPrev}
+  hasNext={result.hasNext}
+  base={`/tags/${slug}/`}
+  crumbs={[{ href: '/', label: SITE.title }, { href: '/tags/', label: 'Tags' }]}
+  robots="noindex, follow"
+/>

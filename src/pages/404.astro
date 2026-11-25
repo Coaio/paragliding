@@ -1,0 +1,12 @@
+---
+import Base from '../layouts/Base.astro';
+import { withBase } from '../lib/site';
+---
+
+<Base title="Page not found" robots="noindex, follow">
+  <div class="py-14">
+    <h1 class="text-4xl font-bold mb-4">Page not found</h1>
+    <p class="mb-6 text-zinc-500">That page is not in the directory.</p>
+    <a class="border rounded-full px-6 py-2 hover:bg-zinc-200" href={withBase('/')}>Back home</a>
+  </div>
+</Base>

@@ -1,0 +1,57 @@
+---
+import Base from '../layouts/Base.astro';
+import Aside from './Aside.astro';
+import Breadcrumb from './Breadcrumb.astro';
+import Card from './Card.astro';
+import Pagination from './Pagination.astro';
+import type { Entry } from '../lib/content';
+import { SITE } from '../lib/site';
+
+interface Crumb {
+  href: string;
+  label: string;
+}
+
+interface Props {
+  title: string;
+  description?: string;
+  entries: Entry[];
+  page: number;
+  hasPrev: boolean;
+  hasNext: boolean;
+  base: string;
+  crumbs: Crumb[];
+  robots?: string;
+  keywordsExtra?: string[];
+}
+
+const {
+  title,
+  description,
+  entries,
+  page,
+  hasPrev,
+  hasNext,
+  base,
+  crumbs,
+  robots = 'index, follow',
+  keywordsExtra = [],
+} = Astro.props;
+---
+
+<Base title={title} description={description || SITE.description} robots={robots} keywordsExtra={keywordsExtra}>
+  <Breadcrumb items={crumbs} />
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-14">
+    <section class="md:col-span-2">
+      <h2 class:list={["text-3xl font-bold", description ? "mb-4" : "mb-10"]}>{title}</h2>
+      {description && <p class="mb-10 text-zinc-500">{description}</p>}
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-y-10 gap-x-4">
+        {entries.map((entry) => <Card entry={entry} />)}
+      </div>
+      <Pagination base={base} page={page} hasPrev={hasPrev} hasNext={hasNext} />
+    </section>
+    <aside class="md:col-span-1">
+      <Aside />
+    </aside>
+  </div>
+</Base>

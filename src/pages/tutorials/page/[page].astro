@@ -1,0 +1,25 @@
+---
+import ListLayout from '../../../components/ListLayout.astro';
+import { loadTutorials, paginate, sectionPages } from '../../../lib/content';
+import { SECTIONS, SITE } from '../../../lib/site';
+
+export async function getStaticPaths() {
+  const entries = await loadTutorials();
+  return sectionPages(entries.length).map(({ page }) => ({ params: { page } }));
+}
+
+const page = Number(Astro.params.page);
+const section = SECTIONS.tutorials;
+const result = paginate(await loadTutorials(), page);
+---
+
+<ListLayout
+  title={section.title}
+  description={section.description}
+  entries={result.items}
+  page={result.page}
+  hasPrev={result.hasPrev}
+  hasNext={result.hasNext}
+  base="/tutorials/"
+  crumbs={[{ href: '/', label: SITE.title }]}
+/>

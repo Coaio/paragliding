@@ -1,0 +1,87 @@
+---
+import { render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Aside from './Aside.astro';
+import Breadcrumb from './Breadcrumb.astro';
+import Card from './Card.astro';
+import type { Entry } from '../lib/content';
+import { loadEntries, relatedEntries } from '../lib/content';
+import { SECTIONS, SITE, humanize, imageSrc, longDate, machineDate, readingMinutes, withBase } from '../lib/site';
+
+interface Props {
+  entry: Entry;
+}
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const { all } = await loadEntries();
+const related = relatedEntries(entry, all);
+const section = SECTIONS[entry.collection];
+const minutes = readingMinutes(entry.body);
+---
+
+<Base
+  title={entry.data.title}
+  description={entry.data.description}
+  image={imageSrc(entry.data.image)}
+  keywordsExtra={entry.data.tags}
+>
+  <Breadcrumb
+    items={[
+      { href: '/', label: SITE.title },
+      { href: `/${entry.collection}/`, label: section.title },
+    ]}
+  />
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-14">
+    <article class="md:col-span-2 prose lg:prose-lg">
+      <header class="not-prose">
+        <h1 id="title" class="text-4xl font-bold leading-normal">{entry.data.title}</h1>
+        <div id="lead" class="my-6">
+          <p class="font-bold">{entry.data.description}</p>
+        </div>
+        <div id="writer" class="flex items-center space-x-4">
+          <ul class="flex items-center space-x-4 flex-nowrap whitespace-nowrap overflow-x-auto">
+            <li class="font-semibold my-2">{SITE.author}</li>
+            <li class="before:content-['•'] before:mr-2 before:opacity-50 my-2">
+              <time datetime={machineDate(entry.data.date)}>{longDate(entry.data.date)}</time>
+            </li>
+            <li class="before:content-['•'] before:mr-2 before:opacity-50 my-2">
+              {minutes} min read
+            </li>
+          </ul>
+        </div>
+      </header>
+      <figure id="featureimage" class="rounded-xl">
+        <img class="rounded-lg w-full h-auto" src={imageSrc(entry.data.image)} alt={entry.data.title} />
+      </figure>
+      <div id="content" class="mb-14">
+        <Content />
+        {entry.data.tags.length > 0 && (
+          <ul id="taxonomy" class="not-prose flex items-center space-x-4 flex-nowrap whitespace-nowrap overflow-x-auto">
+            <li class="font-semibold my-4">Tags:</li>
+            {entry.data.tags.map((tag) => (
+              <li>
+                <a class="py-2 px-6 border rounded-full hover:bg-zinc-100 active:bg-zinc-300" href={withBase(`/tags/${tag}/`)}>
+                  {humanize(tag)}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+      <footer id="content-footer" class="not-prose">
+        {related.length > 0 && (
+          <div id="related-post">
+            <h2 class="text-xl md:text-2xl font-bold mb-6 md:mb-8">Recommended for You</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {related.map((item) => <Card entry={item} />)}
+            </div>
+          </div>
+        )}
+      </footer>
+    </article>
+    <aside class="md:col-span-1">
+      <Aside />
+    </aside>
+  </div>
+</Base>

@@ -1,0 +1,19 @@
+---
+import ListLayout from '../../components/ListLayout.astro';
+import { loadTutorials, paginate } from '../../lib/content';
+import { SECTIONS, SITE } from '../../lib/site';
+
+const section = SECTIONS.tutorials;
+const result = paginate(await loadTutorials(), 1);
+---
+
+<ListLayout
+  title={section.title}
+  description={section.description}
+  entries={result.items}
+  page={result.page}
+  hasPrev={result.hasPrev}
+  hasNext={result.hasNext}
+  base="/tutorials/"
+  crumbs={[{ href: '/', label: SITE.title }]}
+/>
